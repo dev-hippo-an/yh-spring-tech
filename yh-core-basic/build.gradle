@@ -1,22 +1,14 @@
-plugins {
-    id 'org.springframework.boot' version '2.7.1'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'java'
-}
-
-group = 'anpopo'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
-
-repositories {
-    mavenCentral()
+bootJar {
+    archiveFileName = 'yh-core-basic.jar'
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
+bootJar {
+    enabled = false
+}
+jar {
+    enabled = true
 }
