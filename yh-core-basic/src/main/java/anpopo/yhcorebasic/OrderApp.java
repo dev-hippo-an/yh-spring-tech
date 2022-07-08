@@ -8,16 +8,24 @@ import anpopo.yhcorebasic.member.MemberServiceImpl;
 import anpopo.yhcorebasic.orders.OrderService;
 import anpopo.yhcorebasic.orders.Orders;
 import anpopo.yhcorebasic.orders.OrdersServiceImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class OrderApp {
 
     public static void main(String[] args) {
-        AppConfig appConfig = new AppConfig();
+//        AppConfig appConfig = new AppConfig();
 //        MemberService memberService = new MemberServiceImpl();
 //        OrderService orderService = new OrdersServiceImpl();
 
-        MemberService memberService = appConfig.memberService();
-        OrderService orderService = appConfig.orderService();
+//        MemberService memberService = appConfig.memberService();
+//        OrderService orderService = appConfig.orderService();
+
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        MemberService memberService = ac.getBean(MemberService.class);
+        OrderService orderService = ac.getBean(OrderService.class);
+
 
         Long memberId = 1L;
         Member member1 = new Member(memberId, "member1", Grade.VIP);
