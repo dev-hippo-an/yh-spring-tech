@@ -30,4 +30,8 @@ public class OrdersServiceImpl implements OrderService {
 
         return new Orders(memberId, itemName, itemPrice, discount);
     }
+
+    public MemberRepository getMemberRepository() {
+        return this.memberRepository;
+    }
 }
