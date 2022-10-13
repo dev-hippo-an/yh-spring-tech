@@ -2,6 +2,9 @@ package anpopo.yhcorebasic;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class SimpleJavaTest {
 
 
@@ -19,6 +22,13 @@ public class SimpleJavaTest {
         String newClause = clause.replaceAll( "[-.]", String.valueOf(1));
 
         System.out.println(newClause);
+    }
+
+    @Test
+    void test33() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("g", null);
+        System.out.println(map.toString());
     }
 
 
